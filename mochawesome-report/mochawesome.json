@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-04-14T16:20:57.955Z",
+    "end": "2023-04-14T16:21:13.139Z",
+    "duration": 15184,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "29d1069b-e328-4e2b-a7fe-2ea6f06440ea",
+      "title": "",
+      "fullFile": "D:\\FrontEnd\\Practice projects\\selenuimtry27.03\\test\\goDaddyDomainName.js",
+      "file": "\\test\\goDaddyDomainName.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e05fb3b6-af29-49e9-9102-b91cfe8daeee",
+          "title": "task for go dadyy",
+          "fullFile": "D:\\FrontEnd\\Practice projects\\selenuimtry27.03\\test\\goDaddyDomainName.js",
+          "file": "\\test\\goDaddyDomainName.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "automate all links",
+              "fullTitle": "task for go dadyy automate all links",
+              "timedOut": false,
+              "duration": 15176,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//create driver\nlet driver = await new Builder()\n  .forBrowser(\"chrome\")\n  .setChromeOptions(options)\n  .build();\n//navigate to app\nawait driver.get(\"https://www.godaddy.com/\");\nawait driver.manage().window().maximize();\ndriver.manage().setTimeouts({ implicit: 10000 });\n//check and first link and validate it's title\nconst hamburgerMenu = await driver.findElement(\n  By.css(`[aria-label=\"Open Menu\"]`)\n);\nawait hamburgerMenu.click();\nconst hamburgerMenuDomenNames = await driver.findElement(\n  By.className(\"fsp77ll\")\n);\nawait hamburgerMenuDomenNames.click();\nconst searchDomen = await driver.findElement(\n  By.css(`[data-track-name=\"domains_search_for_domain_names\"]`)\n);\nawait searchDomen.click();\n//wait for new page to load\nawait driver.wait(async function () {\n  const url = await driver.getCurrentUrl();\n  return url !== \"https://www.godaddy.com/pl-pl\";\n}, 10000);\nconst expectedDomenPageTitle =\n  \"Wyszukiwarka domen GoDaddy – kup i zarejestruj dostępne nazwy domen\";\nconst title = await driver.getTitle();\nconsole.log(title);\nawait title.should.equal(expectedDomenPageTitle);\ntry {\n  const searchBox = await driver.findElement(\n    By.id(\"8469f0c3-e08f-4343-9756-ce0390b0d581\")\n  );\n  const isEnabled = await searchBox.isEnabled();\n  if (isEnabled) {\n    console.log(\"Search box is present and enabled!\");\n    const buyButton = await driver.findElement(\n      By.className(\"ux-button ux-button-primary\")\n    );\n    const isEnabledButton = await buyButton.isEnabled();\n    console.log(`isEnabledButton`, isEnabledButton);\n    await searchBox.sendKeys(\"dean\", Key.RETURN);\n    //await buyButton.click();\n  } else {\n    console.log(\"Search box is not enabled.\");\n  }\n} finally {\n  //\n}\n    setTimeout(async function () {\n      await driver.quit();\n    }, 5000);",
+              "err": {},
+              "uuid": "51a44b30-2200-47b3-a5b3-30e76d147800",
+              "parentUUID": "e05fb3b6-af29-49e9-9102-b91cfe8daeee",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "51a44b30-2200-47b3-a5b3-30e76d147800"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15176,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
