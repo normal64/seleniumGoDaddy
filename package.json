@@ -9,7 +9,8 @@
     "test-goDaddyLink": "set NODE_ENV=test && mocha --no-timeouts --reporter mochawesome --require mochawesome/register test/goDaddyLink.js",
     "test-goDaddyAllLinks": "set NODE_ENV=test && mocha --no-timeouts --reporter mochawesome --require mochawesome/register test/goDaddyAllLinks.js",
     "test-goDaddyDomainName": "set NODE_ENV=test && mocha --no-timeouts --reporter mochawesome --require mochawesome/register test/goDaddyDomainName.js",
-    "test-goBrokenLinks": "set NODE_ENV=test && mocha --no-timeouts --reporter mochawesome --require mochawesome/register test/brokenLinks.js"
+    "test-goBrokenLinks": "set NODE_ENV=test && mocha --no-timeouts --reporter mochawesome --require mochawesome/register test/brokenLinks.js",
+    "test-practiceForm": "set NODE_ENV=test && mocha --no-timeouts --reporter mochawesome --require mochawesome/register test/practiceForm.js"
   },
   "author": "",
   "license": "ISC",
