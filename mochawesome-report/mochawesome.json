@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2023-04-16T19:21:28.543Z",
-    "end": "2023-04-16T19:21:46.791Z",
-    "duration": 18248,
+    "start": "2023-04-17T16:28:30.244Z",
+    "end": "2023-04-17T16:28:47.552Z",
+    "duration": 17308,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3f34e11f-5502-4d3d-be2b-37cf849a7d18",
+      "uuid": "f265af5e-3c56-45ac-b9b0-b2b7d3f212fe",
       "title": "",
       "fullFile": "D:\\FrontEnd\\Practice projects\\selenuimtry27.03\\test\\practiceForm.js",
       "file": "\\test\\practiceForm.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b0e15572-acee-428c-bb44-c7eb1f780a37",
+          "uuid": "460ae9a7-0cae-456f-a910-ddcd9351246b",
           "title": "task for go phptravels",
           "fullFile": "D:\\FrontEnd\\Practice projects\\selenuimtry27.03\\test\\practiceForm.js",
           "file": "\\test\\practiceForm.js",
@@ -38,29 +38,29 @@
               "title": "automate all links",
               "fullTitle": "task for go phptravels automate all links",
               "timedOut": false,
-              "duration": 18233,
+              "duration": 17301,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "//create driver\n// Set up the Selenium driver\nconst driver = await new Builder().forBrowser(\"chrome\").build();\n// Navigate to the webpage\ndriver.get(\"https://www.techlistic.com/p/selenium-practice-form.html\");\n// Find all the links on the page\nconst acceptCookies = await driver.findElement(By.id(\"ez-accept-all\"));\nacceptCookies.click();\nawait driver.sleep(5000);\ndriver.get(\"https://www.techlistic.com/p/selenium-practice-form.html\");\n  // // Wait for the ad to load and then close it\n  // await driver.wait(until.elementLocated(By.id(\"div-gpt-ad-techlistic_com-medrectangle-2-0\")));\n  // await driver.executeScript(\"document.getElementById('div-gpt-ad-techlistic_com-medrectangle-2-0').remove();\");\n  \n  \nconst firstName = await driver.findElement(By.name(\"firstname\"));\nawait firstName.sendKeys(\"Denis\")\n const secondName = await driver.findElement(By.name(\"lastname\"));\n await secondName.sendKeys(\"Poplavskii\")\n const gender = await driver.findElement(By.id(\"sex-1\"));\n await gender.click()\n//  const exp = await driver.findElement(By.id(\"exp-3\"));\n//  await exp.click()\n// const cookieNotification = await driver.findElement(By.className(\"cookie-choices-text\"));\n// await driver.wait(until.elementIsNotVisible(cookieNotification));\n// const wait = new WebDriverWait(driver, 10);\n// const exp = await wait.until(until.elementToBeClickable(By.id(\"exp-3\")));\n// await exp.click();\n const date = await driver.findElement(By.id(\"datepicker\"));\n await date.sendKeys(\"2023.04.15\")\n//  const professionAQA = await driver.findElement(By.id(\"profession-1\"));\n// await professionAQA.click();\n// const aTool = await driver.findElement(By.id(\"tool-2\"));\n// await aTool.click();\n//selecting continent option\nconst dropdown = await driver.findElement(By.id(\"continents\"));\nconst select = await new Select(dropdown);\nawait select.selectByIndex(1); // selects the second option\n//selecting selenium commands\nconst dropdown2 = await driver.findElement(By.id(\"selenium_commands\"));\nconst select2 = await new Select(dropdown2);\nawait select2.selectByIndex(0);\nawait select2.selectByIndex(4); // selects the second option\n\nlet uploadImage = await driver.findElement(By.id(\"photo\"))\nawait uploadImage.sendKeys(\"C:\\\\Users\\\\DenisPoplawski\\\\Documents\\\\123.png\");\n\n \nconst submit = await driver.findElement(By.id(\"submit\"));\nawait submit.click()\n// setTimeout(async function () {\n//   await driver.quit();\n// }, 5000);",
+              "code": "//create driver\n// Set up the Selenium driver\nconst driver = await new Builder().forBrowser(\"chrome\").build();\n// Navigate to the webpage\ndriver.get(\"https://www.techlistic.com/p/selenium-practice-form.html\");\n// Find all the links on the page\nconst acceptCookies = await driver.findElement(By.id(\"ez-accept-all\"));\nacceptCookies.click();\nawait driver.sleep(5000);\ndriver.get(\"https://www.techlistic.com/p/selenium-practice-form.html\");\n// // Wait for the ad to load and then close it\n// await driver.wait(until.elementLocated(By.id(\"div-gpt-ad-techlistic_com-medrectangle-2-0\")));\n// await driver.executeScript(\"document.getElementById('div-gpt-ad-techlistic_com-medrectangle-2-0').remove();\");\nconst firstName = await driver.findElement(By.name(\"firstname\"));\nawait firstName.sendKeys(\"Denis\");\nconst secondName = await driver.findElement(By.name(\"lastname\"));\nawait secondName.sendKeys(\"Poplavskii\");\nconst gender = await driver.findElement(By.id(\"sex-1\"));\nawait gender.click();\n//radio button selected with js because blocked with some weird invisible Ad\n//  const exp = await driver.findElement(By.id(\"exp-3\"));\n//  await exp.click()\nconst exp = await driver.findElement(By.id(\"exp-3\"));\nawait driver.executeScript(\"arguments[0].click();\", exp);\nconst date = await driver.findElement(By.id(\"datepicker\"));\nawait date.sendKeys(\"2023.04.15\");\n//radio button selected with js because blocked with some weird invisible Ad\n//  const professionAQA = await driver.findElement(By.id(\"profession-1\"));\n// await professionAQA.click();\nconst profession = await driver.findElement(By.id(\"profession-1\"));\nawait driver.executeScript(\"arguments[0].click();\", profession);\n//radio button selected with js because blocked with some weird invisible Ad\n// const aTool = await driver.findElement(By.id(\"tool-2\"));\n// await aTool.click();\nconst tool = await driver.findElement(By.id(\"tool-2\"));\nawait driver.executeScript(\"arguments[0].click();\", tool);\n//selecting continent option\nconst dropdown = await driver.findElement(By.id(\"continents\"));\nconst select = await new Select(dropdown);\nawait select.selectByIndex(1); // selects the second option\n//selecting selenium commands\nconst dropdown2 = await driver.findElement(By.id(\"selenium_commands\"));\nconst select2 = await new Select(dropdown2);\nawait select2.selectByIndex(0);\nawait select2.selectByIndex(4); // selects the second option\nlet uploadImage = await driver.findElement(By.id(\"photo\"));\nawait uploadImage.sendKeys(\"C:\\\\Users\\\\DenisPoplawski\\\\Documents\\\\123.png\");\nconst submit = await driver.findElement(By.id(\"submit\"));\nawait submit.click();\n// setTimeout(async function () {\n//   await driver.quit();\n// }, 5000);",
               "err": {},
-              "uuid": "0a6c4080-271d-4719-b75e-2ca79cbfadab",
-              "parentUUID": "b0e15572-acee-428c-bb44-c7eb1f780a37",
+              "uuid": "98d2a2de-3751-4e45-8fdf-ef57f3c41256",
+              "parentUUID": "460ae9a7-0cae-456f-a910-ddcd9351246b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "0a6c4080-271d-4719-b75e-2ca79cbfadab"
+            "98d2a2de-3751-4e45-8fdf-ef57f3c41256"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 18233,
+          "duration": 17301,
           "root": false,
           "rootEmpty": false,
           "_timeout": 0

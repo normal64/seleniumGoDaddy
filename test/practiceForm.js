@@ -31,19 +31,27 @@ describe("task for go phptravels", async function () {
     await secondName.sendKeys("Poplavskii");
     const gender = await driver.findElement(By.id("sex-1"));
     await gender.click();
+
+    //radio button selected with js because blocked with some weird invisible Ad
     //  const exp = await driver.findElement(By.id("exp-3"));
     //  await exp.click()
-    // const cookieNotification = await driver.findElement(By.className("cookie-choices-text"));
-    // await driver.wait(until.elementIsNotVisible(cookieNotification));
-    // const wait = new WebDriverWait(driver, 10);
-    // const exp = await wait.until(until.elementToBeClickable(By.id("exp-3")));
-    // await exp.click();
+    const exp = await driver.findElement(By.id("exp-3"));
+    await driver.executeScript("arguments[0].click();", exp);
+
     const date = await driver.findElement(By.id("datepicker"));
     await date.sendKeys("2023.04.15");
+
+    //radio button selected with js because blocked with some weird invisible Ad
     //  const professionAQA = await driver.findElement(By.id("profession-1"));
     // await professionAQA.click();
+    const profession = await driver.findElement(By.id("profession-1"));
+    await driver.executeScript("arguments[0].click();", profession);
+
+    //radio button selected with js because blocked with some weird invisible Ad
     // const aTool = await driver.findElement(By.id("tool-2"));
     // await aTool.click();
+    const tool = await driver.findElement(By.id("tool-2"));
+    await driver.executeScript("arguments[0].click();", tool);
 
     //selecting continent option
     const dropdown = await driver.findElement(By.id("continents"));
